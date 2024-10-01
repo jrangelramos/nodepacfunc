@@ -1,4 +1,12 @@
 specVersion: 0.36.0
 name: nodepacfunc
 runtime: node
+registry: image-registry.openshift-image-registry.svc:5000/test-pac
 created: 2024-10-01T10:00:27.564640438-03:00
+build:
+  git:
+    url: https://github.com/jrangelramos/nodepacfunc
+    revision: main
+  builder: s2i
+deploy:
+  image: image-registry.openshift-image-registry.svc:5000/test-pac/nodepacfunc:latest
